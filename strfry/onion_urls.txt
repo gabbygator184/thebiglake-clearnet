@@ -1,0 +1,4 @@
+wss://freelay.sovbit.host
+wss://nostrvista.aaroniumii.com
+wss://relay.bitcoinveneto.org
+wss://nostr.satstralia.com

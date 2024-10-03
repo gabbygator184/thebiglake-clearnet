@@ -1,4 +1,8 @@
 tor/tor_data/
+
 html/*
 !html/.keep
+
 bridge_*
+
+strfry/db/*
