@@ -6,9 +6,10 @@ services:
       - ./tor/tor_data:/var/lib/tor
       - ./tor/torrc:/etc/tor/torrc
     ports:
-      - 80:80
-      - 443:443
-      - 8080:8080
+      - 80:80 # HTTP
+      - 443:443 # HTTPS
+      - 8080:8080 # NOSTR
+      - 3001:3001 # UPTIME_KUMA
 
   nginx:
     build: ./nginx
@@ -38,6 +39,15 @@ services:
       - ./strfry/onion_urls.txt:/app/onion_urls.txt:ro
       - ./strfry/config/strfry.conf:/etc/strfry.conf:ro
       - ./strfry/db:/app/strfry-db:rw
+    depends_on:
+      - tor
+    network_mode: service:tor
+
+  uptime_kuma:
+    image: louislam/uptime-kuma:latest
+    restart: always
+    volumes:
+      - ./uptimekuma/data:/app/data:rw
     depends_on:
       - tor
     network_mode: service:tor
