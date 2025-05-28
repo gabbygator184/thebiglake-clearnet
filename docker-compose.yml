@@ -32,13 +32,13 @@ services:
       - tor
     network_mode: service:tor
 
-  nostr:
-    image: koalasat/satstralia-web-nostr:0.6
+  relay:
+    image: satstralia/satstralia-web-nostr:0.1
     restart: always
     volumes:
-      - ./strfry/onion_urls.txt:/app/onion_urls.txt:ro
-      - ./strfry/config/strfry.conf:/etc/strfry.conf:ro
-      - ./strfry/db:/app/strfry-db:rw
+      - ./relay/onion_urls.txt:/app/onion_urls.txt:ro
+      - ./relay/config/strfry.conf:/etc/strfry.conf:ro
+      - ./relay/db:/app/strfry-db:rw
     depends_on:
       - tor
     network_mode: service:tor
