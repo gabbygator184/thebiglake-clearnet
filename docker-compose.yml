@@ -17,7 +17,7 @@ services:
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt:ro
       - ./html:/var/www/html:ro
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/:/etc/nginx/conf.d/:ro
     depends_on:
       - tor
     network_mode: service:tor
