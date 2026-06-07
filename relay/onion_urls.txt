@@ -1,3 +1,2 @@
-wss://relay.bitcoinveneto.org
-wss://nostr.satstralia.com
 wss://relay.damus.io
+wss://nostr.robosats.org
