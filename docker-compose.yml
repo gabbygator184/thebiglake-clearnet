@@ -11,6 +11,11 @@ services:
       - 8080:8080 # NOSTR
       - 3001:3001 # UPTIME_KUMA
 
+  jekyll:
+    build: ../robosats/docs
+    container_name: pages
+    restart: always
+
   nginx:
     image: nginx:1.28.0-alpine-slim
     restart: always
