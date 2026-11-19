@@ -50,7 +50,7 @@ services:
     network_mode: service:tor
 
   uptime_kuma:
-    image: louislam/uptime-kuma:latest
+    image: louislam/uptime-kuma:2.5.12
     restart: always
     volumes:
       - ./uptimekuma/data:/app/data:rw
